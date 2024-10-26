@@ -2,16 +2,24 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
+	"yamuna/handlers"
 )
+
+// Struct to hold JSON response data
+type Response struct {
+	Message string `json:"message"`
+}
+
+// Home handler
 
 func main() {
 	// Set up routes
-	http.HandleFunc("/items", router)
-	http.HandleFunc("/items/", router)
+	http.HandleFunc("/", handlers.HomeHandler)
+	http.HandleFunc("/api", handlers.APIHandler)
+	http.HandleFunc("/danceing", handlers.DanceHandler)
+	http.HandleFunc("/post", handlers.PostHandler)
 
-	// Start the server on port 3000
-	fmt.Println("Server is running on port 3000...")
-	log.Fatal(http.ListenAndServe(":3000", nil))
+	fmt.Println("Server is running on http://localhost:3080")
+	http.ListenAndServe(":3080", nil)
 }
