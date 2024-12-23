@@ -2,24 +2,48 @@ package main
 
 import (
 	"fmt"
-	"net/http"
-	"yamuna/handlers"
 )
 
-// Struct to hold JSON response data
-type Response struct {
-	Message string `json:"message"`
+func main() {
+	name := "hello_world"
+	var nude string = "ramanujam"
+	var number int = 43
+
+	fmt.Println(number)
+	fmt.Println(name)
+	fmt.Println(nude)
+
+	var array [3]string = [3]string{"maga", "raja", "karthi"}
+
+	data := array[:]
+
+	data = append(data, "king", "quen")
+	fmt.Println(data)
+
+	dev()
 }
 
-// Home handler
+func dev() {
 
-func main() {
-	// Set up routes
-	http.HandleFunc("/", handlers.HomeHandler)
-	http.HandleFunc("/api", handlers.APIHandler)
-	http.HandleFunc("/danceing", handlers.DanceHandler)
-	http.HandleFunc("/post", handlers.PostHandler)
+	//_nepal := 56
 
-	fmt.Println("Server is running on http://localhost:3080")
-	http.ListenAndServe(":3080", nil)
+	// myMap := make(map[string]int)
+
+	// myMap["magaraja"] = 2786745323456775
+	// myMap["magja"] = 57
+
+	// for i := 0; i < 10; i++ {
+	// 	fmt.Println(i)
+	// }
+
+	// fmt.Println(myMap["magaraja"])
+
+	names := "badass"
+
+	devops(names)
+}
+
+func devops(name string) {
+
+	fmt.Println(name)
 }
