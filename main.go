@@ -2,48 +2,31 @@ package main
 
 import (
 	"fmt"
+	"go_lang/server"
 )
 
 func main() {
-	name := "hello_world"
-	var nude string = "ramanujam"
-	var number int = 43
+	name := "maharaja"
+	details := &name
+	consist := *details
+	fmt.Println(details)
+	fmt.Println(consist)
 
-	fmt.Println(number)
-	fmt.Println(name)
-	fmt.Println(nude)
+	dash()
 
-	var array [3]string = [3]string{"maga", "raja", "karthi"}
+	Map := make(map[string]int)
+	Map["raja"] = 25
 
-	data := array[:]
-
-	data = append(data, "king", "quen")
-	fmt.Println(data)
-
-	dev()
 }
 
-func dev() {
+func dash() {
+	variable := []string{"maga", "raja", "srinath"}
+	for _, value := range variable {
+		if value == variable[len(variable)-1] {
+			fmt.Println(value)
+			break
+		}
+		server.Server()
+	}
 
-	//_nepal := 56
-
-	// myMap := make(map[string]int)
-
-	// myMap["magaraja"] = 2786745323456775
-	// myMap["magja"] = 57
-
-	// for i := 0; i < 10; i++ {
-	// 	fmt.Println(i)
-	// }
-
-	// fmt.Println(myMap["magaraja"])
-
-	names := "badass"
-
-	devops(names)
-}
-
-func devops(name string) {
-
-	fmt.Println(name)
 }
